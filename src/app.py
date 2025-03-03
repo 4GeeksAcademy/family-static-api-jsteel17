@@ -45,7 +45,7 @@ def post_member():
     new_member = jackson_family.add_member(member)
     if new_member:
         return jsonify({"message": "New member added", "member": new_member}), 200
-    return jsonify({"error": "Invalid age value"}), 400
+    return jsonify({"error": "Invalid age"}), 400
 
 @app.route("/member/<int:member_id>", methods=["DELETE"])
 def delete_member(member_id):
